@@ -8,7 +8,7 @@ public class Principal {
 		int suma = 0;
 
 		// Antes de los dos puntos se define una variable del tipo de lo que sea la
-		// variable. Después de los dos puntos aparece el nombre del array.
+		// variable. Después de los dos puntos aparece el nombre del array;
 
 		for (int valor : numeros) {
 			suma += valor;
