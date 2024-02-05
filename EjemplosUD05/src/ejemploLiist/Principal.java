@@ -6,45 +6,42 @@ import java.util.List;
 public class Principal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		List<String> listado = new ArrayList<String>();
-		listado.add("Ángel");
-		listado.add("Rafa");
-		listado.add("Juanjo");
+		List<Persona> listado = new ArrayList<>();
+		CrudPersona c = new CrudPersona(listado);
 
-		listado.contains("Rafa");
-		System.out.println(listado.contains("Rafa"));
+		Persona p = new Persona("Pet", 19, "29567983z");
+		Persona p2 = new Persona("Víctor", 22, "34956345c");
+		Persona p3 = new Persona("Carlos", 18, "12039345v");
 
-		System.out.println(listado);
+		listado.add(new Persona("Pet", 19, "29567983z")); // Se puede añadir con listado.add (p) o con listado.add (new
+															// Persona)
 
-		listado.remove(1);
-
-		System.out.println(listado);
-
-		System.out.println(listado.size());
-		listado.remove(0);
+		listado.add(new Persona("Víctor", 22, "34956345c"));
 
 		System.out.println(listado);
 
-		System.out.println("\n\nCambio\n\n");
+		System.out.println(listado.contains(new Persona("Carlos", 18, "12039345v")));
 
-		List<Producto> listado2 = new ArrayList<Producto>();
-		Producto p = new Producto("Lechuga", 1.99);
-		Producto p2 = new Producto("Victor", 3);
-		Producto p3 = new Producto("Carlos", 1);
+		listado.remove(0); // Como son "array" dinámicos, el tamaño se ajusta. En este caso borro el índice
+							// 0 (pet) y el 0 pasa aser Víctor
 
-		listado2.add(p);
+		System.out.println(listado.get(0));
 
-		listado2.add(p2);
+		System.out.println(listado);
 
-		System.out.println(listado2);
+		System.out.println();
 
-		System.out.println(listado2.contains(p3));
+		c.agregarPersona(p);
+		System.out.println(c.buscarDni("34956345c"));
 
-		listado2.remove(0);
+		System.out.println("Mostrar");
+		c.mostrarLista();
 
-		System.out.println(listado2);
+		c.eliminarPersona("34956345c");
+
+		System.out.println("mostrar");
+		c.mostrarLista();
 
 	}
 
