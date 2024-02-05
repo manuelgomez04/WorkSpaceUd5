@@ -62,6 +62,7 @@ public class Principal {
 				aux = sc.nextLine();
 				id = Integer.parseInt(aux);
 				cr.mostrarNota(id);
+				// Carlos feo
 				break;
 
 			case 0:
