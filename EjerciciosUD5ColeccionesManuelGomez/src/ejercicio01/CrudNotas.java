@@ -45,7 +45,7 @@ public class CrudNotas {
 	}
 
 	public void borrarNota(int id) {
-		if (buscarNota(id) != null) {
+		if (!lista.isEmpty()) {
 			lista.remove(buscarNota(id));
 		}
 	}
@@ -53,13 +53,43 @@ public class CrudNotas {
 	public void mostrarNotas() {
 
 		for (Nota nota : lista) {
-			System.out.println(nota);
+			if (!lista.isEmpty())
+				System.out.println(nota);
 		}
 	}
 
 	public void mostrarNota(int id) {
 
-		System.out.println(buscarNota(id));
+		if (!lista.isEmpty()) {
+			System.out.println(buscarNota(id));
+		}
+
 	}
 
+	public int contarTamanio() {
+		return lista.size();
+	}
+
+	public Nota[] buscarNotasPorTitulo(String titulo) {
+
+		Nota n[] = new Nota[lista.size()];
+
+		for (int i = 0; i < lista.size(); i++) {
+
+			if (lista.get(i).getTitulo().equalsIgnoreCase(titulo)) {
+				n[i] = lista.get(i);
+			}
+		}
+
+		return n;
+
+	}
+
+	public void mostrarNotasPorTitulo(String titulo) {
+		System.out.println(buscarNotasPorTitulo(titulo));
+	}
+
+	public void modificar(int id) {
+
+	}
 }

@@ -8,7 +8,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		String aux;
+		String aux, titulo;
 		int id, opcion;
 
 		Scanner sc = new Scanner(System.in);
@@ -34,6 +34,7 @@ public class Principal {
 		cr.agregarNota(new Nota("kasdfjgjklsfdgklsdhlfklg", 1, "Hola"));
 		cr.agregarNota(new Nota("gfsdghskljdfghlskjdfsdfhlglkjsdfhlkgjhsdfl", 2, "YOOOOOOOOOOOOW"));
 		cr.agregarNota(new Nota("ksadfyiguosdfgjklfsdghlkdf", 3, "Víctor tonto"));
+		cr.agregarNota(new Nota("kasdfjgjklsfdgklsdhlfklg", 4, "Hola"));
 
 		do {
 
@@ -42,6 +43,8 @@ public class Principal {
 					1 ---> Mostrar todas las notas
 					2 ---> Borrar una nota
 					3 ---> Mostrar una nota
+					4 ---> Decir tamaño de la nota
+					5 ---> Buscar notas por título
 					""");
 			aux = sc.nextLine();
 			opcion = Integer.parseInt(aux);
@@ -64,7 +67,15 @@ public class Principal {
 				cr.mostrarNota(id);
 				// Carlos feo
 				break;
+			case 4:
+				System.out.println("La cantidad de notas son" + cr.contarTamanio());
+				break;
+			case 5:
+				System.out.println("Diga título de la nota");
+				titulo = sc.nextLine();
+				cr.mostrarNotasPorTitulo(titulo);
 
+				break;
 			case 0:
 				System.out.println("Gracias por usar el programa");
 				break;
