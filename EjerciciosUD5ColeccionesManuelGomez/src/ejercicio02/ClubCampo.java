@@ -22,10 +22,11 @@ public class ClubCampo {
 		return "ClubCampo [cs=" + cs + "]";
 	}
 
-	public double calcularTotal(String dni) {
+	public double calcularTotal() {
 		double total = 0;
+		int i = 0;
 		for (Socio s : cs.getListaSocios()) {
-			total += cs.getListaSocios().get(cs.buscarInt(dni)).getCuotaBase();
+			total += cs.getListaSocios().get(i).getCuotaBase();
 		}
 		return total;
 	}

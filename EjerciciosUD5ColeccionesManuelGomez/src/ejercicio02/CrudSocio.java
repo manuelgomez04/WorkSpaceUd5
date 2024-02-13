@@ -37,8 +37,8 @@ public class CrudSocio {
 		}
 		return s;
 	}
-	
-	public int buscarInt (String dni) {
+
+	public int buscarInt(String dni) {
 		boolean salir = false;
 		int index = 0;
 		for (int i = 0; i < listaSocios.size() && !salir; i++) {
@@ -66,8 +66,10 @@ public class CrudSocio {
 
 	}
 
-	public void moodificarSocio(String dni, double cuotaBase) {
+	public void moodificarCuotaBase(String dni, double cuotaBase) {
 
 		listaSocios.get(buscarInt(dni)).setCuotaBase(cuotaBase);
+
+		// buscarDNI(dni).setCuotaBase(cuotaBase);
 	}
 }

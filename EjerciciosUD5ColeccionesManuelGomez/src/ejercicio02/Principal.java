@@ -54,10 +54,10 @@ public class Principal {
 				aux = sc.nextLine();
 				cuotaBase = Double.parseDouble(aux);
 
-				cs.moodificarSocio(dni, cuotaBase);
+				cs.moodificarCuotaBase(dni, cuotaBase);
 				break;
 			case 3:
-				// cc.calcularTotal(dni);
+				System.out.println(cc.calcularTotal());
 				break;
 
 			case 4:
