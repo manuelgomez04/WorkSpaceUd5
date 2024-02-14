@@ -2,29 +2,23 @@ package ejemplo02;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Principal {
 
 	public static void main(String[] args) {
-		// Se viene
 
-		List<String> memberNames = new ArrayList<>();
-		memberNames.add("Amitabh");
-		memberNames.add("Shekhar");
-		memberNames.add("Aman");
-		memberNames.add("Rahul");
-		memberNames.add("Shahrukh");
-		memberNames.add("Salman");
-		memberNames.add("Yana");
-		memberNames.add("Hola");
-		memberNames.add("Hola");
-		memberNames.add("Hola");
+		List<String> nombres = new ArrayList<>();
 
-		Stream<String> yow = memberNames.stream();
+		nombres.add("Bruno");
+		nombres.add("Moises");
+		nombres.add("Victor");
+		nombres.add("Carlos");
+		nombres.add("Manuel");
 
-		yow.distinct().forEach(System.out::println);
+		// nombres.stream().filter(nombre -> nombre.contains("V")).findAny().get();
+		System.out.println(nombres.stream().filter(nombre -> nombre.contains("V")).findAny().get());
 
+		nombres.stream().count();
 	}
 
 }
