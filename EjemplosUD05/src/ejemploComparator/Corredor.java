@@ -38,6 +38,11 @@ public class Corredor implements Comparable<Corredor> {
 	}
 
 	@Override
+	public String toString() {
+		return "Corredor [dorsal=" + dorsal + ", marca=" + marca + ", nombre=" + nombre + "]";
+	}
+
+	@Override
 	public int compareTo(Corredor o) {
 
 		if (this.dorsal < o.dorsal) {

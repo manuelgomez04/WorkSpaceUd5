@@ -19,6 +19,8 @@ public class Principal {
 		System.out.println(nombres.stream().filter(nombre -> nombre.contains("V")).findAny().get());
 
 		nombres.stream().count();
+
+		// nombres.stream().limit(6).
 	}
 
 }

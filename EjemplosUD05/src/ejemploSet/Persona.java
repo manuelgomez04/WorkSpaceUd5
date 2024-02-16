@@ -36,7 +36,6 @@ public class Persona {
 		this.nombre = nombre;
 	}
 
-	@Override
 	public String toString() {
 		return "edad=" + edad + " dni=" + dni + " nombre=" + nombre + "";
 	}
