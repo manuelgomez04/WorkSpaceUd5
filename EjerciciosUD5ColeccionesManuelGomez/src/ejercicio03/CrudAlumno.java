@@ -19,7 +19,6 @@ public class CrudAlumno {
 		this.listaAlumno = listaAlumno;
 	}
 
-	@Override
 	public String toString() {
 		return "CrudAlumno [listaAlumno=" + listaAlumno + "]";
 	}
@@ -31,12 +30,15 @@ public class CrudAlumno {
 	public Alumno buscarAlumnoDni(String dni) {
 		Alumno alum = null;
 
-		for (Alumno alumno : listaAlumno) {
-			if (alumno.getDni().equals(dni)) {
-				alum = alumno;
+		if (listaAlumno.size() != 0) {
+
+			for (Alumno alumno : listaAlumno) {
+				if (alumno.getDni().equalsIgnoreCase(dni)) {
+					return alumno;
+				}
 			}
 		}
-		return alum;
+		return null;
 	}
 
 	public void mostrarAlumnoBuscado(String dni) {

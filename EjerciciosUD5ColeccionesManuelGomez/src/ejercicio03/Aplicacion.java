@@ -4,11 +4,6 @@ public class Aplicacion {
 
 	private CrudAlumno cA;
 
-	public Aplicacion(CrudAlumno cA) {
-		super();
-		this.cA = cA;
-	}
-
 	public CrudAlumno getcA() {
 		return cA;
 	}
@@ -43,5 +38,5 @@ public class Aplicacion {
 		return contador;
 	}
 
-	public double calcularMedia
+	// public double calcularMedia
 }
