@@ -2,15 +2,16 @@ package ejemplo03;
 
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Stream;
 
 public class CrudPersona {
 
 	private Set<Persona> lista;
+	private List<Persona> lista2;
 
-	public CrudPersona(Set<Persona> lista) {
+	public CrudPersona(Set<Persona> lista, List<Persona> lista2) {
 		super();
 		this.lista = lista;
+		this.lista2 = lista2;
 	}
 
 	public Set<Persona> getLista() {
@@ -21,17 +22,25 @@ public class CrudPersona {
 		this.lista = lista;
 	}
 
+	public List<Persona> getLista2() {
+		return lista2;
+	}
+
+	public void setLista2(List<Persona> lista2) {
+		this.lista2 = lista2;
+	}
+
 	@Override
 	public String toString() {
-		return "CrudPersona [lista=" + lista + "]";
+		return "CrudPersona [lista=" + lista + ", lista2=" + lista2 + "]";
 	}
 
 	public List<Persona> buscarPersonasMismoNombre(String nombre) {
 
-		return lista.stream().filter(Persona -> Persona.getNombre().equalsIgnoreCase(nombre)).toList();
+		return lista2.stream().filter(Persona -> Persona.getNombre().equalsIgnoreCase(nombre)).toList();
 
-		Stream<Persona> yow;
-		yow.empty();
+//		Stream<Persona> yow;
+//		yow.empty();
 
 	}
 
@@ -55,5 +64,24 @@ public class CrudPersona {
 
 	public double calcMedia() {
 		return 0;
+	}
+
+	public List<Persona> masJovenque(int edad) {
+
+		return lista2.stream().filter(p -> p.getEdad() <= edad).limit(3).toList();
+	}
+
+	public List<Persona> skip() {
+
+		return lista2.stream().skip(2).toList();
+	}
+
+	public List<Persona> listaOrdenada() {
+
+		return lista2.stream().sorted((p1, p2) -> p1.getNombre().compareTo(p2.getNombre())).toList();
+	}
+
+	public List<Integer> map() {
+		return lista2.stream().map(p -> p.getEdad() * 3).toList();
 	}
 }
