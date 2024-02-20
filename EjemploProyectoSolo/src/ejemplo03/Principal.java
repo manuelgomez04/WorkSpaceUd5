@@ -19,9 +19,11 @@ public class Principal {
 		listaPersonas.add(new Persona("Manuel", "Lopez", "1234", 18));
 		listaPersonas.add(new Persona("Carlos", "Lopez", "1234", 15));
 
-		cp.getLista().stream().filter(Persona -> Persona.getNombre().equalsIgnoreCase("juan"));
+//		cp.getLista().stream().filter(Persona -> Persona.getNombre().equalsIgnoreCase("juan"))
+//				.forEach(System.out::println);
 
-		cp.calcularEdadMedia(nombre);
+		System.out.println(cp.buscarPersonasMismoNombre(nombre));
+		System.out.println(cp.calcularEdadMedia(nombre));
 
 	}
 

@@ -1,5 +1,6 @@
 package ejemplo03;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -25,27 +26,34 @@ public class CrudPersona {
 		return "CrudPersona [lista=" + lista + "]";
 	}
 
-	public Stream<Persona> buscarPersonasMismoNombre(String nombre) {
+	public List<Persona> buscarPersonasMismoNombre(String nombre) {
 
-		return lista.stream().filter(Persona -> Persona.getNombre().equalsIgnoreCase(nombre));
-	}
+		return lista.stream().filter(Persona -> Persona.getNombre().equalsIgnoreCase(nombre)).toList();
 
-	public void calcularEdadMedia(String nombre) {
-
-		int edad = 0;
-
-		/*
-		 * lista.stream().filter(Persona ->
-		 * Persona.getNombre().equalsIgnoreCase(nombre)) .map(Persona ->
-		 * Integer.parseInt(Persona.getEdad() + edad));
-		 */
-
-		// lista.stream().filter(p -> p.getNombre().equalsIgnoreCase(nombre)).map(p ->
-		// p.getEdad() + edad);
-
-		lista.stream().filter(p -> p.getNombre().equalsIgnoreCase(nombre)).map(p -> p.getEdad() + edad)
-				.forEach(System.out::println);
+		Stream<Persona> yow;
+		yow.empty();
 
 	}
 
+	public int calcularEdadMedia(String nombre) {
+
+//		return lista.stream().filter(p -> p.getNombre().equalsIgnoreCase(nombre)).map(p -> p.getEdad() + edad);
+//		lista.stream().filter(p -> p.getNombre().equalsIgnoreCase(nombre)).map(p -> p.getEdad() + edad.)
+//				.forEach(System.out::println);
+
+//		edad = lista.stream().filter(p -> p.getNombre().equalsIgnoreCase(nombre));
+
+//		lista.stream().average().filter(Persona -> Persona.getNombre().equalsIgnoreCase(nombre));
+
+		int total = 0;
+		for (int j = 0; j < buscarPersonasMismoNombre(nombre).size(); j++) {
+
+			total += buscarPersonasMismoNombre(nombre).get(j).getEdad();
+		}
+		return total / buscarPersonasMismoNombre(nombre).size();
+	}
+
+	public double calcMedia() {
+		return 0;
+	}
 }
