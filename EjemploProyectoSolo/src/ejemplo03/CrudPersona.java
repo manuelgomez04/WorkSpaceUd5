@@ -1,7 +1,9 @@
 package ejemplo03;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.IntStream;
 
 public class CrudPersona {
 
@@ -76,13 +78,28 @@ public class CrudPersona {
 		return lista2.stream().skip(2).toList();
 	}
 
-	public List<Persona> listaOrdenada() {
+	public List<Persona> listaOrdenadaNombre() {
 
 		return lista2.stream().sorted((p1, p2) -> p1.getNombre().compareTo(p2.getNombre())).toList();
 	}
 
+	public List<Persona> ordenarEdades() {
+		Comparator<Persona> compararMayores = Comparator.comparing(Persona::getEdad);
+
+		return lista2.stream().sorted(compararMayores).toList();
+	}
+
 	public List<Integer> map() {
 		return lista2.stream().map(p -> p.getEdad() * 3).toList();
+	}
+
+	public List<String> map2() {
+		return lista2.stream().map(p -> p.getNombre()).distinct().toList();
+	}
+
+	public IntStream mapEdad(int edad) {
+
+		return lista2.stream().filter(p -> p.getEdad() == edad).mapToInt(Persona::getEdad);
 	}
 
 	public void addViaje() {

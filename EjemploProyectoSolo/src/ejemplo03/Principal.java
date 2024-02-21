@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Consumer;
 
 public class Principal {
 
@@ -48,13 +47,15 @@ public class Principal {
 		System.out.println();
 		System.out.println(cp.skip());
 		System.out.println();
-		System.out.println(cp.listaOrdenada());
+		System.out.println(cp.listaOrdenadaNombre());
+		System.out.println();
+		System.out.println(cp.ordenarEdades());
 
-		lista2.stream().map(persona -> persona.getListaV()).flatMap(vi -> vi.stream()).forEach(new Consumer<Viaje>() {
-			public void accept(Viaje v) {
-				System.out.println(v.getPais());
-			}
-		});
+//		lista2.stream().map(persona -> persona.getListaV()).flatMap(vi -> vi.stream()).forEach(new Consumer<Viaje>() {
+//			public void accept(Viaje v) {
+//				System.out.println(v.getPais());
+//			}
+//		});
 
 	}
 
