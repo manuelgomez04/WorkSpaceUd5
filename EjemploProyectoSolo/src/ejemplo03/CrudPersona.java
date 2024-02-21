@@ -84,4 +84,8 @@ public class CrudPersona {
 	public List<Integer> map() {
 		return lista2.stream().map(p -> p.getEdad() * 3).toList();
 	}
+
+	public void addViaje() {
+
+	}
 }

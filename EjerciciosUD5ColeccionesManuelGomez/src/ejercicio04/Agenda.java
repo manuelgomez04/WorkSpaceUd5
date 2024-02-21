@@ -1,7 +1,8 @@
 package ejercicio04;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class Agenda {
 
@@ -25,20 +26,33 @@ public class Agenda {
 		return "Agenda [listaContacto=" + listaContacto + "]";
 	}
 
-	public void addContacto(Contacto c) {
-		listaContacto.put(c, c.getNumTelf());
+	public void addContacto(Contacto c, String telefono) {
+		listaContacto.put(c, telefono);
 	}
 
-	public Contacto buscarContacto(String nombre) {
-		Contacto c = null;
-		Set<Contacto> claves = listaContacto.keySet();
-		for (Contacto conct : claves) {
-			if (conct.getNombre().equals(nombre)) {
-				c = conct;
+	public Contacto buscarContacto(String numTelf) {
+
+		for (Contacto conct : listaContacto.keySet()) {
+			if (conct.getNombre().equals(numTelf)) {
+				return conct;
 			}
 
 		}
-		return c;
+		return null;
+	}
+
+	public List<Contacto> buscarContactoNombre(String nombre) {
+
+//		Set<Contacto> listaBuscada = new HashSet<Contacto>();
+		List<Contacto> listaBuscada = new ArrayList<>();
+
+		for (Contacto con : listaContacto.keySet()) {
+			if (con.getNombre().equalsIgnoreCase(nombre)) {
+				listaBuscada.add(con);
+			}
+
+		}
+		return listaBuscada;
 	}
 
 	public void deleteContacto(String num) {
@@ -46,7 +60,10 @@ public class Agenda {
 	}
 
 	public void mostrarContactos() {
-		System.out.println(listaContacto);
+
+		for (Contacto con : listaContacto.keySet()) {
+			System.out.println(con);
+		}
 	}
 
 	public void modificarDatosContacto(String nom, String nuevoNombre) {

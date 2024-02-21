@@ -31,7 +31,7 @@ public class Principal {
 				nombre = sc.nextLine();
 				System.out.println("Diga número de teléfono");
 				numTelf = sc.nextLine();
-				ag.addContacto(new Contacto(nombre, numTelf));
+				ag.addContacto(new Contacto(nombre, numTelf), numTelf);
 				break;
 			case 2:
 				ag.mostrarContactos();
@@ -39,7 +39,7 @@ public class Principal {
 			case 3:
 				System.out.println("Diga el nombre del contacto que desea buscar");
 				nombre = sc.nextLine();
-				System.out.println(ag.buscarContacto(nombre));
+				System.out.println(ag.buscarContactoNombre(nombre));
 				break;
 			case 4:
 				System.out.println("Diga el nombre del contacto que desea borrar");
