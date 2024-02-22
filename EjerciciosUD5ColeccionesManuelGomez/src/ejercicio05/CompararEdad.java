@@ -6,7 +6,13 @@ public class CompararEdad implements Comparator<Persona> {
 
 	@Override
 	public int compare(Persona p1, Persona p2) {
-		// TODO Auto-generated method stub
+
+		if (p1.getEdad() < p2.getEdad()) {
+			return -1;
+		} else if (p1.getEdad() > p2.getEdad()) {
+			return 1;
+		}
+
 		return 0;
 	}
 
