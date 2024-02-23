@@ -33,6 +33,11 @@ public class Principal {
 
 		System.out.println("\n\nOrdenar por edad\n");
 		Collections.sort(listPersona, new CompararEdad());
+
+		System.out.println("Forma 1");
+		System.out.println(listPersona);
+
+		System.out.println("Forma 2");
 		for (Persona persona : listPersona) {
 			System.out.println(persona);
 		}
