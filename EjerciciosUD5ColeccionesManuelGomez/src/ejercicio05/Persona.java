@@ -53,7 +53,7 @@ public class Persona implements Comparable<Persona> {
 
 	@Override
 	public int compareTo(Persona p) {
-		return -(this.getNombre().toLowerCase().compareTo(p.getNombre().toLowerCase()));
+		return (this.getNombre().toLowerCase().compareTo(p.getNombre().toLowerCase()));
 	}
 
 }
