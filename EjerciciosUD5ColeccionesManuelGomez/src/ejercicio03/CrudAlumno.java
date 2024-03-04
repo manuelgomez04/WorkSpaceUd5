@@ -28,7 +28,6 @@ public class CrudAlumno {
 	}
 
 	public Alumno buscarAlumnoDni(String dni) {
-		Alumno alum = null;
 
 		if (listaAlumno.size() != 0) {
 

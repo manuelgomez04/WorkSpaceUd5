@@ -1,6 +1,7 @@
 package ejercicio06;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Principal {
@@ -13,6 +14,11 @@ public class Principal {
 		listaTrabajadores.add(new Trabajador("Br1", "293283c", 129, 1520));
 		listaTrabajadores.add(new Trabajador("Moisex", "23234556v", 196, 3));
 		listaTrabajadores.add(new Trabajador("Vihto", "123244543v", 195, 2));
+
+		Collections.sort(listaTrabajadores, new CompararNombreYSueldo());
+		for (Trabajador trabajador : listaTrabajadores) {
+			System.out.println(trabajador);
+		}
 
 	}
 

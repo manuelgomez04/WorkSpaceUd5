@@ -7,11 +7,12 @@ public class CompararNombreYSueldo implements Comparator<Trabajador> {
 	@Override
 	public int compare(Trabajador o1, Trabajador o2) {
 		Trabajador t = new Trabajador();
+		ComparaSueldo cs = new ComparaSueldo();
 
 		if (o1.getNombre().equalsIgnoreCase(o2.getNombre())) {
-			return t.compareTo(o2);
+			return cs.compare(o1, o2);
 		} else {
-			return -(o1.getNombre().toLowerCase().compareTo(o2.getNombre().toLowerCase()));
+			return (o1.getNombre().toLowerCase().compareTo(o2.getNombre().toLowerCase()));
 		}
 	}
 
