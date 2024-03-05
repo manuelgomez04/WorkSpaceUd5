@@ -52,6 +52,22 @@ public class Agenda {
 		return null;
 	}
 
+	public Set<Contacto> findContactos(String nombre) {
+		Set<Contacto> buscado = new HashSet<Contacto>();
+		for (Contacto contacto : listaContacto.keySet()) {
+			if (contacto.getNombre().equalsIgnoreCase(nombre)) {
+				buscado.add(contacto);
+			}
+		}
+		return buscado;
+	}
+
+	public void mostrarMap() {
+		for (Contacto contacto : listaContacto.keySet()) {
+			System.out.println(contacto);
+		}
+	}
+
 	public void borrarContacto(String telefono) {
 		listaContacto.remove(findTelefono(telefono));
 	}
@@ -64,6 +80,14 @@ public class Agenda {
 
 	public void modificarNombre(String telefono, String nuevoNombre) {
 		findTelefono(telefono).setNombre(nuevoNombre);
+	}
+
+	public void dfsfd() {
+		System.out.println(listaContacto.entrySet());
+	}
+
+	public void kddk() {
+		System.out.println(listaContacto);
 	}
 
 }

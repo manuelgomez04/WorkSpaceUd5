@@ -66,7 +66,12 @@ public class Agenda {
 		}
 	}
 
-	public void modificarDatosContacto(String nom, String nuevoNombre) {
-		buscarContacto(nom).setNombre(nuevoNombre);
+	public void fsfd() {
+		System.out.println(listaContacto);
 	}
+
+	public void modificarDatosContacto(String telefono, String nuevoNombre) {
+		listaContacto.replace(buscarContacto(telefono), nuevoNombre);
+	}
+
 }

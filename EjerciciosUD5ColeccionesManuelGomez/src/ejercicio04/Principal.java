@@ -10,7 +10,7 @@ public class Principal {
 		Scanner sc = new Scanner(System.in);
 		String nombre, numTelf, nuevoNombre, aux;
 		int opcion;
-		Map<Contacto, String> listaContacto = new HashMap<Contacto, String>();
+		Map<Contacto, String> listaContacto = new HashMap<>();
 		Agenda ag = new Agenda(listaContacto);
 
 		do {
@@ -35,6 +35,7 @@ public class Principal {
 				break;
 			case 2:
 				ag.mostrarContactos();
+				ag.fsfd();
 				break;
 			case 3:
 				System.out.println("Diga el nombre del contacto que desea buscar");

@@ -1,5 +1,6 @@
 package ejercicioSet;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class CrudAlumno {
@@ -28,7 +29,23 @@ public class CrudAlumno {
 		listaAlumno.add(a);
 	}
 
-	public void findAlumnoIt(String dni) {
+	public Alumno findAlumno(String dni) {
+		for (Alumno alumno : listaAlumno) {
+			if (alumno.getDni().equalsIgnoreCase(dni)) {
+				return alumno;
+			}
+		}
+		return null;
+	}
 
+	public Set<Alumno> findAlumnoNombre(String nombre) {
+
+		Set<Alumno> listaBuscada = new HashSet<Alumno>();
+		for (Alumno alumno : listaAlumno) {
+			if (alumno.getNombre().equalsIgnoreCase(nombre)) {
+				listaBuscada.add(alumno);
+			}
+		}
+		return listaBuscada;
 	}
 }
