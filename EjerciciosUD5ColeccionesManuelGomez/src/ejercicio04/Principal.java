@@ -31,7 +31,7 @@ public class Principal {
 				nombre = sc.nextLine();
 				System.out.println("Diga número de teléfono");
 				numTelf = sc.nextLine();
-				ag.addContacto(new Contacto(nombre, numTelf), numTelf);
+				ag.addContacto(new Contacto(nombre, numTelf));
 				break;
 			case 2:
 				ag.mostrarContactos();

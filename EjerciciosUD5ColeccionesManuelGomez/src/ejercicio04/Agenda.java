@@ -26,8 +26,8 @@ public class Agenda {
 		return "Agenda [listaContacto=" + listaContacto + "]";
 	}
 
-	public void addContacto(Contacto c, String telefono) {
-		listaContacto.put(c, telefono);
+	public void addContacto(Contacto c) {
+		listaContacto.put(c, c.getNumTelf());
 	}
 
 	public Contacto buscarContacto(String numTelf) {
