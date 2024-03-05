@@ -13,14 +13,14 @@ public class Principal {
 //		en metros cuadrados, dirección (String con la calle), número de trastero, precio y si está ocupado o no.
 //		Crear también una clase Oficina donde tendremos como atributo una lista de trasteros de tipo List y donde se tendrá
 //		métodos para hacer realizar las siguientes funcionalidades (no todas tienen que coincidir con un método):
-//		• Añadir un nuevo trastero al final de la lista con los datos leídos por teclado.
-//		• Buscar un trastero por precio.
-//		• Buscar un trastero por número devolviendo el trastero en cuestión.
-//		• Buscar al trastero más caro, es decir, el de precio mayor.
-//		• Eliminar un trastero.
-//		• Modificar un trastero elegido por el usuario, modificando únicamente su precio.
-//		• Ordenar la lista de trasteros por número (orden natural) y por precio (orden no natural) de mayor a menor.
-//		• Mostrar usando for each solo los trasteros no ocupados.
+//		 Añadir un nuevo trastero al final de la lista con los datos leídos por teclado.
+//		 Buscar un trastero por precio.
+//		 Buscar un trastero por número devolviendo el trastero en cuestión.
+//		 Buscar al trastero más caro, es decir, el de precio mayor.
+//		 Eliminar un trastero.
+//		 Modificar un trastero elegido por el usuario, modificando únicamente su precio.
+//		 Ordenar la lista de trasteros por número (orden natural) y por precio (orden no natural) de mayor a menor.
+//		 Mostrar usando for each solo los trasteros no ocupados.
 
 		Scanner sc = new Scanner(System.in);
 
@@ -108,13 +108,20 @@ public class Principal {
 				System.out.println("Diga el número del trastero a modificar");
 				aux = sc.nextLine();
 				numBuscar = Integer.parseInt(aux);
-				System.out.println("Diga nuevo precio");
-				aux = sc.nextLine();
-				precio = Double.parseDouble(aux);
-				of.modificarPrecio(numBuscar, precio);
+				if (of.findPorNum(numBuscar) == null) {
+					System.out.println("Este objeto no existe");
+
+				} else {
+
+					System.out.println("Diga nuevo precio");
+					aux = sc.nextLine();
+					precio = Double.parseDouble(aux);
+
+					of.modificarPrecio(numBuscar, precio);
+				}
 				break;
 			case 6:
-				Collections.sort(listaTrasteros);
+				of.ordenarListaNatural();
 				of.mostrarLista();
 				break;
 			case 7:

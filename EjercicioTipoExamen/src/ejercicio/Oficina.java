@@ -1,6 +1,7 @@
 package ejercicio;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Oficina {
@@ -91,5 +92,14 @@ public class Oficina {
 		for (Trastero trastero : listaTrasteros) {
 			System.out.println(trastero);
 		}
+	}
+
+	public void ordenarListaNatural() {
+		Collections.sort(listaTrasteros);
+	}
+
+	public void ordenarListaPrecio() {
+
+		Collections.sort(listaTrasteros, new OrdenaPorPrecio());
 	}
 }
