@@ -6,7 +6,7 @@ public class CompararNombreYSueldo implements Comparator<Trabajador> {
 
 	@Override
 	public int compare(Trabajador o1, Trabajador o2) {
-		Trabajador t = new Trabajador();
+
 		ComparaSueldo cs = new ComparaSueldo();
 
 		if (o1.getNombre().equalsIgnoreCase(o2.getNombre())) {
