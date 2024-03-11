@@ -66,7 +66,7 @@ public class Jugador implements Comparable<Jugador> {
 	@Override
 	public int compareTo(Jugador o) {
 
-		return this.getPosicion().toLowerCase().compareTo(o.getPosicion().toLowerCase());
+		return this.posicion.toLowerCase().compareTo(o.getPosicion().toLowerCase());
 	}
 
 }

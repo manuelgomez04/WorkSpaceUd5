@@ -80,7 +80,6 @@ public class Equipo {
 
 	public void mostrarLista() {
 		Iterator<Jugador> it = listaJugadores.iterator();
-		int contador = 0;
 
 		for (int i = 0; i < listaJugadores.size(); i++) {
 			if (it.hasNext()) {

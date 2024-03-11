@@ -46,89 +46,89 @@ public class Principal {
 			aux = sc.nextLine();
 			opcion = Integer.parseInt(aux);
 			switch (opcion) {
-			case 1:
-				System.out.println("Diga nombre del jugador");
-				nombre = sc.nextLine();
+				case 1:
+					System.out.println("Diga nombre del jugador");
+					nombre = sc.nextLine();
 
-				System.out.println("""
-						Diga posición
-						"Portero"
-						"Defensa"
-						"Medio"
-						"Delantero"
-						""");
-				posicion = sc.nextLine();
-				System.out.println("Diga dorsal");
-				aux = sc.nextLine();
-				dorsal = Integer.parseInt(aux);
-
-				System.out.println("Diga número de goles marcados");
-				aux = sc.nextLine();
-				numGoles = Integer.parseInt(aux);
-
-				System.out.println("""
-						¿Es titular?
-						1 ---> Sí
-						2 ---> No
-						""");
-				aux = sc.nextLine();
-				opTitular = Integer.parseInt(aux);
-				while (opTitular != 1 && opTitular != 2) {
-					System.out.println("Escriba opción correcta");
+					System.out.println("""
+							Diga posición
+							"Portero"
+							"Defensa"
+							"Medio"
+							"Delantero"
+							""");
+					posicion = sc.nextLine();
+					System.out.println("Diga dorsal");
+					aux = sc.nextLine();
+					dorsal = Integer.parseInt(aux);
+	
+					System.out.println("Diga número de goles marcados");
+					aux = sc.nextLine();
+					numGoles = Integer.parseInt(aux);
+	
+					System.out.println("""
+							¿Es titular?
+							1 ---> Sí
+							2 ---> No
+							""");
 					aux = sc.nextLine();
 					opTitular = Integer.parseInt(aux);
-				}
-				if (opTitular == 1) {
-					esTitular = true;
-				} else {
-					esTitular = false;
-				}
-
-				e.addJugador(new Jugador(nombre, posicion, dorsal, numGoles, esTitular));
-
-				break;
-
-			case 2:
-				e.mostrarNoGoles();
-				break;
-
-			case 3:
-				System.out.printf("La media de goles por jugador es %.2f goles\n", e.calcularMediaGoles());
-
-				break;
-
-			case 4:
-				System.out.println("Diga el dorsal del jugador cuya posición desea modificar");
-				aux = sc.nextLine();
-				dorsal = Integer.parseInt(aux);
-
-				System.out.println("""
-						Diga nueva posición
-						"Portero"
-						"Defensa"
-						"Medio"
-						"Delantero"
-						""");
-				posicion = sc.nextLine();
-
-				e.modificarPosicion(dorsal, posicion);
-				break;
-
-			case 5:
-				e.mostrarLista();
-				break;
-
-			case 6:
-				e.ordenarNatural();
-				e.mostrarLista();
-				break;
-			case 7:
-				e.ordenarNumGoles();
-				e.mostrarLista();
-				break;
-
-			case 0:
-				System.out.println("Saliendo...");
+					while (opTitular != 1 && opTitular != 2) {
+						System.out.println("Escriba opción correcta");
+						aux = sc.nextLine();
+						opTitular = Integer.parseInt(aux);
+					}
+					if (opTitular == 1) {
+						esTitular = true;
+					} else {
+						esTitular = false;
+					}
+	
+					e.addJugador(new Jugador(nombre, posicion, dorsal, numGoles, esTitular));
+	
+					break;
+	
+				case 2:
+					e.mostrarNoGoles();
+					break;
+	
+				case 3:
+					System.out.printf("La media de goles por jugador es %.2f goles\n", e.calcularMediaGoles());
+	
+					break;
+	
+				case 4:
+					System.out.println("Diga el dorsal del jugador cuya posición desea modificar");
+					aux = sc.nextLine();
+					dorsal = Integer.parseInt(aux);
+	
+					System.out.println("""
+							Diga nueva posición
+							"Portero"
+							"Defensa"
+							"Medio"
+							"Delantero"
+							""");
+					posicion = sc.nextLine();
+	
+					e.modificarPosicion(dorsal, posicion);
+					break;
+	
+				case 5:
+					e.mostrarLista();
+					break;
+	
+				case 6:
+					e.ordenarNatural();
+					e.mostrarLista();
+					break;
+				case 7:
+					e.ordenarNumGoles();
+					e.mostrarLista();
+					break;
+	
+				case 0:
+					System.out.println("Saliendo...");
 
 			default:
 				System.out.println("Inserte dato válido");
