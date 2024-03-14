@@ -19,6 +19,8 @@ public class Principal {
 		lista.add("Me");
 		lista.add("Llamo");
 		lista.add("Antonio");
+		lista.add("adios");
+		lista.add("cadena");
 
 		do {
 
@@ -45,7 +47,7 @@ public class Principal {
 				break;
 
 			case 3:
-
+				gc.nuevaPalabra();
 				break;
 
 			case 4:

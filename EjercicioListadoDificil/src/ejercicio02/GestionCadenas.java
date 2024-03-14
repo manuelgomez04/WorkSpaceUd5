@@ -53,11 +53,16 @@ public class GestionCadenas {
 	}
 
 	public void nuevaPalabra() {
-		String nuevoString;
-		for (int i = 0; i < lista.size(); i++) {
-			lista.get(i).charAt(i);
 
-		}
+//		Character yow;
+//		String nuevoString;
+//		for (int i = 0; i < lista.size(); i++) {
+//			yow = lista.get(i).charAt(0);
+//			nuevoString.chars(lista.get(i).charAt(0));
+//		}
+//		System.out.println();
+		lista.stream().map(s -> s.charAt(0)).toArray();
+
 	}
 
 }
